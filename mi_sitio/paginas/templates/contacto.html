@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Contacto - Refugio Huellitas{% endblock %}
+
+{% block contenido %}
+<section class="seccion-contacto">
+    <h1>Formulario de Solicitud de Adopción 📝</h1>
+    <p>Por favor, completa tus datos para que podamos evaluar tu solicitud de adopción responsable.</p>
+
+    <!-- Formulario interactivo -->
+    <form id="formulario-adopcion" class="formulario">
+        <div class="grupo-campo">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+        </div>
+
+        <div class="grupo-campo">
+            <label for="email">Correo de Contacto:</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="grupo-campo">
+            <label for="mascota">Mascota que te interesa:</label>
+            <select id="mascota" required>
+                <option value="">Selecciona una...</option>
+                <option value="Firu">Firu (Perro)</option>
+                <option value="Mimi">Mimi (Gata)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-formulario">Enviar Solicitud</button>
+    </form>
+
+    <!-- Aquí JavaScript mostrará dinámicamente si se envió bien o hubo error -->
+    <div id="notificacion" class="notificacion oculta"></div>
+</section>
+{% endblock %}

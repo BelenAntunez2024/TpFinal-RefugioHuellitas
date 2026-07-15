@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Mascotas en Adopción - Refugio Huellitas{% endblock %}
+
+{% block contenido %}
+<section class="seccion-mascotas">
+    <h1>Nuestros Amigos Buscando Hogar</h1>
+    <p>Usa los botones para filtrar por el tipo de compañero que estás buscando:</p>
+
+    <!-- Botones de filtro que controlaremos más adelante con JavaScript -->
+    <div class="filtros-mascotas">
+        <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+        <button class="btn-filtro" data-filtro="perro">🐶 Perros</button>
+        <button class="btn-filtro" data-filtro="gato">🐱 Gatos</button>
+    </div>
+
+    <!-- Lista de mascotas -->
+    <div class="grid-mascotas">
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta-animal" data-especie="perro">
+            <div class="foto-placeholder">🐶</div>
+            <h3>Firu</h3>
+            <p><strong>Edad:</strong> 2 años</p>
+            <p><strong>Carácter:</strong> Muy juguetón y cariñoso.</p>
+            <a href="/contacto/" class="btn-tarjeta">Quiero Adoptarlo</a>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="tarjeta-animal" data-especie="gato">
+            <div class="foto-placeholder">🐱</div>
+            <h3>Mimi</h3>
+            <p><strong>Edad:</strong> 5 meses</p>
+            <p><strong>Carácter:</strong> Le encantan las siestas y mimos.</p>
+            <a href="/contacto/" class="btn-tarjeta">Quiero Adoptarla</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

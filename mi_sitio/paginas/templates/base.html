@@ -1,0 +1,27 @@
+{% load static %} <!-- Le avisa a Django que vamos a usar imágenes, CSS o JS -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Este bloque permite que cada página cambie el título de la pestaña -->
+    <title>{% block titulo %}Refugio Huellitas{% endblock %}</title>
+    
+    <!-- Aquí vincularemos los estilos de CSS más adelante -->
+</head>
+<body>
+
+    <!-- Modularización: Traemos la barra de navegación aquí -->
+    {% include 'includes/navbar.html' %}
+
+    <!-- Espacio dinámico donde cada página inyectará su propio HTML -->
+    <main class="contenedor-principal">
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <!-- Modularización: Traemos el pie de página aquí -->
+    {% include 'includes/footer.html' %}
+
+</body>
+</html>
