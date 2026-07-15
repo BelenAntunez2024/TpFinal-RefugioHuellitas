@@ -16,3 +16,11 @@ def pagina_mascotas(request):
 def pagina_contacto(request):
     # Renderiza la plantilla contacto.html con el formulario interactivo
     return render(request, 'contacto.html')
+
+#Vista para la sección Nosotros
+def pagina_nosotros(request):
+    return render(request, 'nosotros.html')
+
+# Vista para la sección Cómo Ayudar
+def pagina_ayudar(request):
+    return render(request, 'ayudar.html')
