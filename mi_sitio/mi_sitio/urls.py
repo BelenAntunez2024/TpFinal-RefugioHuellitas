@@ -1,22 +1,18 @@
-"""
-URL configuration for mi_sitio project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# mi_sitio/urls.py
 from django.contrib import admin
 from django.urls import path
+from paginas import views  # Importamos las vistas de nuestra app 'paginas'
 
 urlpatterns = [
+    # Ruta para el panel de administración de Django
     path('admin/', admin.site.urls),
+    
+    # 1. Ruta vacía '' significa la raíz del sitio (Ej: http://127.0.0.1:8000/)
+    path('', views.pagina_home, name='home'),
+    
+    # 2. Ruta para ingresar al catálogo (Ej: http://127.0.0.1:8000/mascotas/)
+    path('mascotas/', views.pagina_mascotas, name='mascotas'),
+    
+    # 3. Ruta para el formulario de contacto (Ej: http://127.0.0.1:8000/contacto/)
+    path('contacto/', views.pagina_contacto, name='contacto'),
 ]
